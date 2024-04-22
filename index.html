@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Dimension Measurement</title>
+</head>
+<body>
+    <h1>Object Dimension Measurement</h1>
+    <form id="measurement-form" enctype="multipart/form-data" action="/measure" method="post">
+        <input type="file" name="image" accept="image/*" required>
+        <input type="number" name="known_dimensions" placeholder="Enter known dimensions (e.g., 7)" required>
+        <button type="submit">Measure</button>
+    </form>
+    <div id="result">
+        {% if dimensions %}
+            <p>Estimated real-world dimensions: {{ dimensions }} cm</p>
+        {% endif %}
+    </div>
+</body>
+</html>
